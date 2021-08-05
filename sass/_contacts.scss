@@ -1,0 +1,174 @@
+.contacts {
+    min-height: 950px;
+    position: relative;
+    &__cities {
+        width: 324px;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 60px;
+        color: $color_green;
+    }
+    &__subtitle {
+        display: block;
+        margin-top: 12px;
+        width: 250px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: #6C6C6C;
+    }
+    &__items-wrapper {
+        margin-top: 57px;
+    }
+    &__items {
+        height: 128px;
+        width: 270px;
+        background: #FFFFFF;
+        position: relative;
+        padding-top: 24px;
+        padding-left: 57px;
+        cursor: pointer;
+        &:hover {
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.0758039);
+        }
+        &-active {
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.0758039);
+            z-index: 3;
+            .contacts__items-img {
+                path {
+                    fill:#00A031;
+                }
+            }
+        }
+        &-img {
+            position: absolute;
+            left: 14px;
+            top: 25px;
+        }
+        &-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            color: #00A031;
+        }
+        &-subtitle {
+            margin-top: 5px;
+            display: inline-block;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: #6C6C6C;
+        }
+    }
+    &__map {
+        height: 756px;
+        width: 702px;
+        position: relative;
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__info {
+        position: absolute;
+        height: 496px;
+        width: 321px;
+        right: -100px;
+        top: 140px;
+        background: #FFFFFF;
+        box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.0758039);
+        padding: 27px 60px;
+        &-active {
+            display: block;
+        }
+        &-title {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 31px;
+            line-height: 40px;
+        }
+        &-subtitle {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: #6C6C6C;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
+        &__item-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            color: #1C201E;
+            margin-top: 20px;
+        }
+
+        &-text {
+            display: inline-block;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: #222222;
+            text-decoration: none;
+        }
+        &-img {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+    }
+}
+
+.container-contacts {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 100px;
+}
+
+@media (max-width: 1200px) {
+    .container-contacts {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-contacts {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    .contacts {
+        &__map {
+            margin-top: 50px;
+            width: 100%;
+        }
+        &__cities {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        &__title {
+            text-align: center;
+        }
+    }
+    
+}

@@ -1,0 +1,219 @@
+.banner .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    color: #fff;
+    font-size: 50px; 
+}
+
+.banner .slick-arrow.fa-chevron-left {
+    left: 0;
+    margin-left: 169px;
+    &:hover {
+      text-shadow:5px 0 10px $color_green;
+    }
+}
+.banner .slick-arrow.fa-chevron-right {
+    right: 0;
+    margin-right: 169px;
+    &:hover {
+      text-shadow:-5px 0 10px $color_green;
+    }
+}
+
+%bv_hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  %filled_obj {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 8vw;
+    opacity: 0;
+    visibility: hidden;
+    transition:all 1.2s ease;
+    .item{
+      &__content-wrapper {
+        width: 1008px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        z-index: 1;
+      }
+      &__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 90px;
+        line-height: 100px;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+        transition:all .3s ease;
+        @extend %bv_hidden;
+      }
+      &__text {
+        margin-top: 25px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: 0.2px;
+        color: #FFFFFF;
+      }
+    }
+    &.slick-initialized {
+      opacity: 1;
+      visibility: visible;
+    }
+}
+
+
+.slick-slide {
+    position: relative;
+    height: 100vh;
+    @extend %bv_hidden;
+    &::before {
+      @extend %filled_obj;
+      @extend %bv_hidden;
+      background-color: #000;
+      opacity: .3;
+      z-index: 1;
+    }
+    .slide-media {
+      animation:slideOut .4s cubic-bezier(0.4, 0.29, 0.01, 1);
+    }
+    &.slick-active {
+      z-index: 1;
+      .slide-media {
+        animation:slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1);
+      }
+      .item__title {
+        opacity: 1;
+        transition:all .7s cubic-bezier(0.32, 0.34, 0, 1.62) .6s;
+      }
+    }
+  }
+  
+  .slick-dots {
+    text-align: center;
+    margin-top: -100px;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 8px;
+      button {
+        font-size: 0;
+        width: 13px;
+        height: 13px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 0 0 0 transparent;
+        vertical-align: middle;
+        color: #fff;
+        background-color: #fff;
+        transition:all .3s ease;
+        opacity: .4;
+        &:hover {
+          opacity: .9;
+          box-shadow: 0 0 10px 2px $color_green;
+        }
+      }
+      &.slick-active {
+        button {
+          background-color: $color_green;
+          opacity: .9; 
+          &:before {
+            position: relative;
+            content:'';
+            display:block;
+            z-index:-1;  
+            width:21px;
+            height:21px;
+            border-radius: 50%;
+            border: 2px solid $color_green;
+            top: -6px;
+            left: -6px;
+          }
+        }
+  
+      }
+    }
+  }
+    
+  @keyframes slideIn {
+    from {
+      filter:blur(15px);
+    }
+    to {
+      filter:blur(0);
+    }
+  }
+  @keyframes slideOut {
+    from {
+      filter:blur(0);
+    }
+    to {
+      filter:blur(15px);
+    }
+  }
+
+
+@media (max-width: 1200px) {
+  .banner {
+    .item {
+      &__title {
+        font-size: 80px;
+        line-height: 90px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .banner {
+    .item {
+      &__title {
+        font-size: 70px;
+        line-height: 80px;
+      }
+      &__text {
+        margin-top: 10px;
+      }
+    }
+  }
+  .banner .slick-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    .item {
+      &__content-wrapper {
+        width: 100%;
+        padding: 20px;
+      }
+      &__title {
+        font-size: 50px;
+        line-height: 60px;
+      }
+    }
+  }
+}

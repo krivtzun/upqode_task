@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+@import "mixins";
+@import "general";
+@import "header";
+@import "banner";
+@import "services";
+@import "contacts";
+@import "footer";
+@import "pageup";
+
+

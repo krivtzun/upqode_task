@@ -1,0 +1,132 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.6s;
+    z-index: 1000;
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        transition: 0.6s;
+        height: 80px;
+
+    }
+    &__logo {
+        margin-top: 26px;
+    }
+    &__menu {
+        margin-top: 27px;
+    }
+}
+.header.sticky {
+    background: #000;
+}
+
+.header__hamburger {
+    display: none;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .header {
+        &__logo {
+            margin-left: 50px;
+        }
+        &__menu {
+            margin-right: 50px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        &__menu {
+            margin-right: 0;
+            margin-top: 0;
+        }
+        &__logo {
+            margin-top: 20px;
+            .logo__link {
+                font-size: 40px;
+            }
+            .logo__img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+    .header__menu {
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        padding: 20px 15px;
+        left: -100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: 0.5s all;
+        .menu__list {
+            flex-direction: column;
+            margin-top: 50px;
+            &-item {
+                margin-top: 25px;
+            }
+        }
+        .menu__link {
+            font-size: 30px;
+        }
+    }
+    .menu_active {
+        left: 0;
+    }
+    .header__hamburger {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 12px;
+    }
+    .header__hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 5px;
+        transition: 0.5s all;
+    }
+    .hamburger_active span {
+        margin-bottom: -2px;
+    }
+    .hamburger_active span:nth-child(1) {
+        transform: translateY(3px) rotate(-45deg);
+    }
+    .hamburger_active span:nth-child(2) {
+        display: none;
+    }
+    .hamburger_active span:nth-child(3) {
+        transform: translateY(3px) rotate(45deg);
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        &__logo {
+            margin-top: 20px;
+            margin-left: 10px;
+            .logo__link {
+                font-size: 30px;
+            }
+            .logo__img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .menu__link {
+            font-size: 25px;
+        }
+    }
+    
+}

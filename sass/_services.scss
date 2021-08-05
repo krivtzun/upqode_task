@@ -1,0 +1,202 @@
+.services {
+    position: relative;
+    padding-top: 92px;
+    padding-bottom: 92px;
+    &__animation {
+      top: 453px;
+      position: absolute;
+      width: 662px;
+      height: 1214px;
+      left: 50%;
+      transform: translateX(-50%);
+      svg {
+        position: absolute;
+        display: block;
+        overflow: visible;
+      }
+      svg path {
+        stroke:#29A0EC; 
+      }  
+      
+      path {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+      
+      #servives__animation-circle {
+        position: absolute;
+        box-sizing: border-box;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: deepskyblue;
+        z-index: 100;
+      }
+      
+      .pulse {
+        border-radius: 50%;
+        border: 2px solid deepskyblue ;
+        width: 40px;	
+        height: 40px;
+        position: absolute;
+        top: -14px;
+        left: -14px;
+        opacity: 0;
+        animation: scaleIn 2.5s infinite cubic-bezier(.36, .11, .89, .32);
+        }
+      
+      
+        @keyframes scaleIn {
+        from {
+          transform: scale(.5, .5);
+          opacity: 1;
+        }
+        to {
+          transform: scale(2.5, 2.5);
+          opacity: 0;
+        }
+        }
+      
+    }
+  
+    &__block {
+      display: flex;
+      justify-content: space-between;
+      &__mobile {
+        position: relative;
+        z-index: 100;
+        &-img {
+          width: 522px;
+          height: 624px;
+        }
+      }
+      &__mobile-second {
+        &-img {
+          width: 530px;
+          height: 612px;
+        }
+      }
+      &__content {
+        margin-top: 87px;
+        max-width: 601px;
+        &-title {
+          font-style: normal;
+          font-weight: 800;
+          font-size: 38px;
+          line-height: 51px;
+          letter-spacing: 0.4px;
+          color: $color_green;
+        }
+        &-subtitle {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #6C6C6C;
+          margin-top: 28px;
+        }
+        &-list {
+          margin-top: 24px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #6C6C6C;
+          list-style-type: none;
+          padding-left: 28px;
+          position: relative;
+          li:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 21px;
+            height: 20px;
+            left: -1px;
+            background: url(../icons/check.svg) center center/cover no-repeat;
+          }
+        }
+      }
+    }
+    &__btn {
+      width: 208px;
+      margin-top: 32px;
+      background: #fff;
+      border: 2px solid $color_green;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      color: $color_green;
+      img {
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+.services__block_third {
+  margin-top: 63px;
+}
+
+
+@media (max-width: 1200px) {
+ .container-services {
+   padding: 0 50px 0 50px;
+ }
+ .services__animation {
+   display: none;
+ }
+ .services__block__mobile-img {
+  width: 400px;
+  height: 478px;
+ }
+ .services__block__mobile_second {
+  .services__block__mobile-img {
+    width: 400px;
+    height: 462px;
+   }
+  }
+
+  .services__block__content {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-services {
+    padding: 0 20px 0 20px;
+  }
+  .services__block__content {
+    margin-top: 30px;
+    margin-left: 20px;
+    &-title {
+      font-size: 30px;
+      line-height: 41px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container-services {
+    padding: 0 70px 0 70px;
+  }
+  .services__block__mobile-img {
+    display: none;
+   }
+   .services__block__content {
+    &-title {
+      text-align: center;
+    }
+   }
+   .services__btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .services__block_second {
+     margin-top: 63px;
+   }
+}
+
+  
