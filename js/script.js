@@ -129,6 +129,13 @@ $(document).ready(function(){
       arrows: true,
       nextArrow: '<i class="fas fa-chevron-right"></i>',
       prevArrow: '<i class="fas fa-chevron-left"></i>',
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: false,
+                 },
+        }]
     });
 
 // Resize event
